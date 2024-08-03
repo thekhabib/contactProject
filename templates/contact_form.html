@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    
+{% block title %} Biz bilan aloqa {% endblock title %}
+{% block content %}
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <h1 style="margin-left: 250px; margin-bottom: 20px;"> Biz bilan aloqa </h1>
+            <form method="post">{% csrf_token %}
+                <div class="formbold-input-flex">
+                    <div>
+                      <label for="first_name" class="formbold-form-label"> Ismingiz </label>
+                      <label>
+                          <input
+                          type="text"
+                          name="first_name"
+                          class="formbold-form-input"
+                          />
+                      </label>
+                    </div>
+                    <div>
+                        <label for="last_name" class="formbold-form-label"> Familiyangiz </label>
+                        <label>
+                            <input
+                            type="text"
+                            name="last_name"
+                            class="formbold-form-input"
+                            />
+                        </label>
+                    </div>
+                </div>
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="phone_number" class="formbold-form-label"> Telefon raqamingiz </label>
+                        <label>
+                            <input
+                            type="text"
+                            name="phone_number"
+                            class="formbold-form-input"
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email" class="formbold-form-label"> Elektron pochta manzilingiz </label>
+                        <label>
+                            <input
+                            type="email"
+                            name="email"
+                            class="formbold-form-input"
+                            />
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="formbold-form-label"> Xabar </label>
+                    <label>
+                        <textarea
+                        rows="8"
+                        name=message"
+                        placeholder="Xabaringizni yozing..."
+                        class="formbold-form-input"
+                        ></textarea>
+                    </label>
+                </div>
+                <button class="formbold-btn">
+                    Yuborish
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

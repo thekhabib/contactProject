@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Contacts List {% endblock title %}
+
+{% block content %}
+    <h1 style="text-align: center; padding: 10px;">Yuborilgan xabarlar ro'yxati</h1>
+    <table class="styled-table">
+        <thead>
+            <tr class="table-head">
+                <th>№</th>
+                <th>Ismi</th>
+                <th>Familiyasi</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Yuborilgan xabar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr class="active-row">
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.first_name }}</td>
+                    <td>{{ contact.last_name }}</td>
+                    <td>{{ contact.phone_number }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.message }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
